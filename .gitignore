@@ -1,0 +1,16 @@
+# Firmware and built images: never commit
+*.syx
+*.elemod
+
+# Build output
+.make-work/
+*.o
+*.elf
+*.map
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Editors and macOS
+.DS_Store

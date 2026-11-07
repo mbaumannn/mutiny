@@ -1,0 +1,130 @@
+{
+ "id": "mutiny",
+ "version": "0.2",
+ "license": "GPL-2.0-or-later",
+ "title": "MUTINY (Eurorack-style sequencers)",
+ "category": "Sequencer",
+ "author": "mbaumannn",
+ "description": "Euclidean, Turing Machine and TB-3PO acid sequencers from the Eurorack world on each Digitone mk1 synth track. Play them from the encoders and press YES to write a page into ordinary trigs. Unofficial and experimental: back up your projects first. Settings are saved per project.",
+ "device": "digitone-mk1",
+ "os": "1.44",
+ "sources": [
+  "mutiny.c",
+  "cmd.c",
+  "playback.c",
+  "commit.c",
+  "input.c",
+  "page.c",
+  "preview.c",
+  "port144.c",
+  "storage.c",
+  "tick.c",
+  "len.s",
+  "../../src/engine/engine.c",
+  "../../src/runtime/runtime.c"
+ ],
+ "cflags": [
+  "-Os",
+  "-fno-tree-loop-distribute-patterns",
+  "-Wstrict-prototypes",
+  "-Wmissing-prototypes"
+ ],
+ "subscribe": [
+  {
+   "event": "ev_key",
+   "fn": "mut_key",
+   "order": 7
+  },
+  {
+   "event": "ev_enc",
+   "fn": "mut_enc",
+   "order": 7
+  },
+  {
+   "event": "ev_tick",
+   "fn": "mut_tick",
+   "order": 62
+  },
+  {
+   "event": "ev_draw",
+   "fn": "mut_draw",
+   "order": 92
+  },
+  {
+   "event": "ev_key_leds",
+   "fn": "mut_leds",
+   "order": 50
+  },
+  {
+   "event": "ev_gen_trig",
+   "fn": "mut_gen_trig",
+   "order": 50
+  },
+  {
+   "event": "ev_gen_notes",
+   "fn": "mut_gen_notes",
+   "order": 50
+  },
+  {
+   "event": "ev_fire_vel",
+   "fn": "mut_fire_vel",
+   "order": 50
+  },
+  {
+   "event": "ev_fire_cond",
+   "fn": "mut_fire_cond",
+   "order": 50
+  },
+  {
+   "event": "ev_fire_locks",
+   "fn": "mut_fire_locks",
+   "order": 50
+  }
+ ],
+ "contribute": [
+  {
+   "to": "core_menu",
+   "order": 39,
+   "data": "00000000",
+   "relocs": [
+    [
+     0,
+     "abs32",
+     "sym:mut_menu",
+     0
+    ]
+   ]
+  },
+  {
+   "to": "core_projdata",
+   "order": 79,
+   "data": "00000000",
+   "relocs": [
+    [
+     0,
+     "abs32",
+     "sym:mut_projdata",
+     0
+    ]
+   ]
+  }
+ ],
+ "resources": {
+  "core": "4.1",
+  "names": [
+   "projdata:MUT2"
+  ]
+ },
+ "requires": [
+  "core",
+  "seq-events"
+ ],
+ "sites": [
+  {
+   "addr": "0x40094688",
+   "stock": "7f2900c0b287",
+   "op": "jsr",
+   "target": "mut_site_len"
+  }
+ ]
+}
