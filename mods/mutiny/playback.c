@@ -212,7 +212,7 @@ int mu_evo_step(struct mu_evo *e, uint32_t cycles, int can_evolve, int hold) {
         return 0;
     }
     if (cycles) {
-        if (cycles > MU_EVO_PENDING_MAX - e->pending) {
+        if (cycles > (uint32_t)(MU_EVO_PENDING_MAX - e->pending)) {
             e->desync = 1;
             e->pending = 0;
             return 0;

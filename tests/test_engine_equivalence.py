@@ -32,7 +32,9 @@ def sha256(path):
 def build(output, include, corpus=CORPUS, extra=()):
     cmd = [os.environ.get("CC") or "cc", *CFLAGS, *extra, "-I", str(include), str(corpus),
            str(Path(include) / "engine.c"), "-o", str(output)]
-    subprocess.run(cmd, check=True, capture_output=True, text=True)
+    result = subprocess.run(cmd, capture_output=True, text=True)
+    if result.returncode != 0:
+        raise RuntimeError("compiler failed:\n" + result.stdout + result.stderr)
     return output
 
 

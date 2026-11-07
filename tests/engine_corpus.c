@@ -124,7 +124,7 @@ int main(void) {
                 struct mu_track t = base_track();
                 struct mu_key kc = key;
                 t.model = (uint8_t)m;
-                t.p[m][0] = (uint8_t)(j ? cap + 1u : mu_knob_default((uint8_t)m, 1));
+                t.p[m][0] = (uint8_t)(j ? cap + 1u : (uint32_t)mu_knob_default((uint8_t)m, 1));
                 kc.len = (uint8_t)(i + 1u);
                 emit("track", index++, &t, &kc);
             }
