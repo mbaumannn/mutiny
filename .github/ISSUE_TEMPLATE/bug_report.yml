@@ -1,0 +1,95 @@
+name: Bug report
+description: Something in MUTINY does not behave as the README says
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. **Never attach Elektron's OS file, a patched OS image or anything extracted from them.** Project backups (`.syx`/project exports) are fine.
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where did it happen?
+      options:
+        - Digitone mk1 hardware
+        - digiemu emulator
+        - Build / lint (no device)
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: MUTINY version
+      description: From the README or the `.elemod` file name, e.g. 0.2.1.
+    validations:
+      required: true
+  - type: input
+    id: setup
+    attributes:
+      label: Device, OS and other mods
+      description: Digitone mk1 or Keys, OS version, core-dn1 version, and every other mod in your build (digitables, ...).
+      placeholder: "Digitone mk1, OS 1.44, core-dn1 4.1, seq-events 0.1, no other mods"
+    validations:
+      required: true
+  - type: dropdown
+    id: model
+    attributes:
+      label: Model
+      options:
+        - TB3P
+        - EUCL
+        - TURI
+        - All / not model specific
+        - Other (page, commit, project data)
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Start from a state I can reach. Name the track, sound and PLAY MODE, the model settings (STEP, HITS, LOCK, SLID, ...), and the buttons you pressed (TRIG PARAMETERS, YES, NO, held encoders).
+      placeholder: |
+        1. Track 1, PLAY MODE MONO LEG., TB3P with SLID 70
+        2. Press YES to commit page 1
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What happened instead
+      description: Wrong notes, a stuck preview, a changed pattern, a freeze, a restart. Say whether NO restored the track.
+    validations:
+      required: true
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: How often
+      options:
+        - Every time
+        - Sometimes
+        - Once
+    validations:
+      required: true
+  - type: dropdown
+    id: data
+    attributes:
+      label: Did it affect your pattern or project data?
+      options:
+        - No
+        - Yes, and I could restore it
+        - Yes, and I lost data
+        - Not sure
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else
+      description: Photos of the screen, a short recording, a project backup, emulator output.

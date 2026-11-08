@@ -1,0 +1,56 @@
+name: Sequencer idea
+description: Propose a new sequencer model or a change to an existing one
+labels: ["idea"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A model is seven controls (encoders B-H, with A picking the model) and a render function. Small, playable ideas fit best. If it is based on existing work, please link it and name its license.
+  - type: input
+    id: name
+    attributes:
+      label: Name and origin
+      description: A short model name (TB3P style) and the idea behind it, such as a module, a paper or a technique.
+    validations:
+      required: true
+  - type: textarea
+    id: musical
+    attributes:
+      label: What it does musically
+      description: What kind of line does it make, and when would you reach for it instead of TB3P, EUCL or TURI?
+    validations:
+      required: true
+  - type: textarea
+    id: controls
+    attributes:
+      label: Seven controls
+      description: One function per encoder (B-H), with the range and default you have in mind. Say which one H should be for "new line".
+      placeholder: |
+        B  STEP   1-16   16
+        C  ...
+    validations:
+      required: true
+  - type: textarea
+    id: sound
+    attributes:
+      label: Sound requirements
+      description: Does it need a special setup, like TB3P's mono legato sound? Does it use per-step parameters, slides, retrigs or conditions?
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Do you want to help?
+      options:
+        - Just the idea
+        - I can test on hardware
+        - I can write the model
+    validations:
+      required: true
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Checks
+      options:
+        - label: I searched existing issues first.
+          required: true
+        - label: I am not including Elektron firmware or code derived from it.
+          required: true

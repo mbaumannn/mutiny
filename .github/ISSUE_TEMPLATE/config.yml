@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Elekloader (building, flashing, recovery)
+    url: https://github.com/irpina/elekloader/issues
+    about: Problems with the build tool, the core or flashing belong with Elekloader, not MUTINY.
