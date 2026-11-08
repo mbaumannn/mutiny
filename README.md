@@ -50,7 +50,7 @@ MUTINY is not:
 
 ## Status
 
-Version 0.2, experimental.
+Version 0.2.1, experimental.
 
 - **Hardware:** I tested it for about an hour on my own Digitone mk1 running OS 1.44, going through
   every feature: the three models, page commits and undo, project save and reload, pattern switches
@@ -227,7 +227,7 @@ with Elektron Transfer, the same way as an official update. You need:
 2. The core `core-dn1` 4.1 for OS 1.44, from Elekloader's mod shop.
 3. `seq-events-0.1-os1.44.elemod` from this project's release. It is Dracyr's work, included
    because it is not in the shop yet.
-4. `mutiny-0.2.elemod` from this project's release.
+4. `mutiny-0.2.1.elemod` from this project's release.
 
 Elekloader checks the stock file's hash, the core version and the dependencies. Do not bypass those
 checks.
@@ -259,7 +259,7 @@ make mod ELEKLOADER=/path/to/elekloader \
 ```
 
 `make mod` checks the SHA256 of the stock file and the two mods, then builds, patches and lints. It
-prints the hashes of `mutiny-0.2.elemod` and the patched image in `.make-work/mod/out/`. The image
+prints the hashes of `mutiny-0.2.1.elemod` and the patched image in `.make-work/mod/out/`. The image
 I tested has SHA256 `2aa55942525cc4959275b7f4846a8761a7ee879a837b44ba06af3d05511f2e64`. Never
 share the patched image: it contains Elektron's firmware.
 

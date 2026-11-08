@@ -1,6 +1,6 @@
 {
  "id": "mutiny",
- "version": "0.2",
+ "version": "0.2.1",
  "license": "GPL-2.0-or-later",
  "title": "MUTINY (Eurorack-style sequencers)",
  "category": "Sequencer",
